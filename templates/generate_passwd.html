@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Logout</title>
+    <link rel="stylesheet" href="static/css/logout.css">
+    <link rel="stylesheet" href="static/css/general.css">
+    <link rel="stylesheet" href="static/css/style.css"></head>
+<body>
+    <nav class="main-menu">
+        <ul>
+            <li>
+                <i class="fa fa-bars fa-2x"></i>
+              
+            </li>
+            <li>
+                <a href="{{ url_for('home') }}">
+                    <i class="fa fa-home fa-2x"></i>
+                    <span class="nav-text">
+                       Home
+                    </span>
+                </a>
+              
+            </li>
+            <li class="has-subnav">
+                <a href="{{ url_for('add_password') }}">
+                    <i class="fa fa-key fa-2x"></i>
+                    <span class="nav-text">
+                        Add Password
+                    </span>
+                </a>
+                
+            </li>
+            <li class="has-subnav">
+                <a href="{{ url_for('generate_passwd') }}">
+                   <i class="fa fa-plus fa-2x"></i>
+                    <span class="nav-text">
+                        Generate Password
+                    </span>
+                </a>
+                
+            </li>
+            
+            <li>
+                <a href="{{ url_for('about_us') }}">
+                   <i class="fa fa-info fa-2x"></i>
+                    <span class="nav-text">
+                        About Us
+                    </span>
+                </a>
+            </li>
+        </ul>
+  
+        <ul class="logout">
+            <li>
+                <a href="{{ url_for('profile') }}">
+                      <i class="fa fa-user fa-2x"></i>
+                     <span class="nav-text">
+                         Profile
+                     </span>
+                 </a>
+            <li>
+               <a href="{{ url_for('logout') }}">
+                     <i class="fa fa-power-off fa-2x"></i>
+                    <span class="nav-text">
+                        Logout
+                    </span>
+                </a>
+            </li>  
+        </ul>
+    </nav>
+</body>
