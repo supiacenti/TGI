@@ -1,0 +1,1 @@
+document.write('<script src="static/jsindex.js"></script>');
