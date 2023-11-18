@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Password Manager</title>
+    {% include 'icon.html' %}
+    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="static/css/general.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/home.css">
+</head>
+
+<body>
+    <section>
+        {% include 'nav.html' %}
+        <h1>Password Manager</h1>
+
+        <main class="mainPage">
+            <div class="above-ul">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search details">
+                    <button type="submit" class="search-button">GO</button>
+                </div>
+                <button class="add-button" onclick="location.href='/add_password'">Add new +</button>
+            </div>
+            <ul id="userspasswords">
+                <li id="titles">
+                    <span class="site" onclick="sortTable('site')">Site<i id="icon-site"
+                            class="fa fa-hand-pointer-o"></i></span>
+                    <span class="username" onclick="sortTable('username')">Username<i id="icon-username"
+                            class="fa fa-hand-pointer-o"></i></span>
+                    <span class="password">Password</span>
+                    <span class="expiration">Expiration</span>
+                    <span class="strength">Strenght</span>
+                    <span>Update</span>
+                    <span>Delete</span>
+                </li>
+                {% for senha in senhas %}
+                <li class="li">
+                    <span class="site">{{ senha.site }}</span>
+                    <span class="username">{{ senha.username }}</span>
+                    <button class="showPass"
+                        onclick="mostrarSenhaModal('{{ senha.site }}', '{{ senha.username }}', '{{ senha.password }}')">Show
+                        Password</button>
+                    {% if is_expired(senha.expiration) %}
+                    <span class="expirationNow">{{ senha.expiration }}</span>
+                    {% else %}
+                    <span class="expirationOk">{{ senha.expiration }}</span>
+                    {% endif %}
+                    {% if senha.strength == 'Strong' %}
+                    <span class="strong">{{ senha.strength }}</span>
+                    {% elif senha.strength == 'Good' %}
+                    <span class="good">{{ senha.strength }}</span>
+                    {% else %}
+                    <span class="weak">{{ senha.strength }}</span>
+                    {% endif %}
+                    <span onclick="mostrarUpdateModal('{{senha.doc_id}}', '{{senha.username}}')"><i id="icon1"
+                            class="fa fa-pencil-square-o"></i></span>
+                    <span onclick="mostrarConfirmModal('{{ senha.doc_id }}')"><i id="icon2" class="fa fa-trash-o"
+                            aria-hidden="true"></i></span>
+                </li>
+                {% endfor %}
+            </ul>
+            <div id="senhaModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h1>Password Details</h1>
+                    <p id="siteModal"></p>
+                    <p id="usernameModal"></p>
+                    <p id="passwordModal"></p><button class="showPass" onclick="copiarSenha()">Copy</button>
+                    <!-- Outros detalhes da senha -->
+                </div>
+            </div>
+            <div id="updateModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h1>Update Password</h1>
+                    <form action="/update/{{ doc_id }}" method="post">
+                        <p id="usernameModal2">New Username:</p>
+                        <input type="text" name="new_username"
+                            placeholder="If it remains the same, it is not necessary to fill out">
+                        <p>New Password:</p>
+                        <input type="password" name="new_password" placeholder="New password" required>
+                        <br><br>
+                        <button type="submit" class="add-button">Update Password</button>
+                    </form>
+                </div>
+            </div>
+            <!-- Modal de Confirmação de Senha -->
+            <div id="confirmModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h1>Delete Password</h1>
+                    <form action="/delete/{{ doc_id }}" method="post">
+                        <p>Por favor, insira sua senha principal para confirmar a exclusão:</p>
+                        <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Senha">
+                        <br><br>
+                        <button type="submit" class="add-button">Delete Password</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <script src="static/js/home.js"></script>
+    </section>
+</body>

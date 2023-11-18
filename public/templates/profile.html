@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    {% include 'icon.html' %}
+    <link rel="stylesheet" href="static/css/general.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/profile.css">
+</head>
+
+<body>
+    {% include 'nav.html' %}
+    <section>
+        <!-- Exibir o ícone selecionado -->
+        {% if user.icon_choice %}
+        <img src="{{ url_for('static', filename='img/' + user.icon_choice) }}" class="icon-image" />
+        {% endif %}
+
+        <div class="info">
+            <p>E-mail: {{ user.email }}</p>
+            <p>Full name: {{ user.full_name }}</p>
+            <p>Username: {{ user.username }}</p>
+        </div>
+
+        <!-- Formulário para escolher o ícone -->
+        <div class="pai">
+            <div class="filho">
+                <form class="code1" action="/verificar_codigo" method="post">
+                    <label for="iconChoice">Email validation:</label>
+                    <input class="code" type="text" name="codigo" placeholder="Enter your code">
+                    <input type="submit" value="Check code">
+                </form>
+            </div>
+            <div class="filho">
+                <form action="/save_icon_choice" method="post">
+                    <label for="iconChoice">Choose an icon:</label>
+                    <select name="iconChoice" id="iconChoice">
+                        <option value="">None</option>
+                        <option value="icon1.png">She Hulk</option>
+                        <option value="icon2.jpg">Winter Soldier</option>
+                        <option value="icon3.jpg">Black Cat</option>
+                        <option value="icon4.jpg">Deadpool</option>
+                        <option value="icon5.jpeg">Loki</option>
+                        <option value="icon6.jpeg">Spider Man - Miles Morales</option>
+                        <option value="icon7.jpeg">Spider Ghost</option>
+                        <option value="icon8.jpeg">Spider Man - Peter Parker</option>
+                        <option value="icon9.jpeg">Jessica Jones</option>
+                        <option value="icon10.jpeg">Kate Bishop</option>
+                        <option value="icon11.jpeg">Black Widow</option>
+                        <option value="icon12.jpg">Scarlet Witch</option>
+                        <option value="icon13.jpeg">Shang Chi</option>
+                        <option value="icon14.jpeg">Iron Man</option>
+                    </select>
+                    <input type="submit" value="Save choice">
+                </form>
+            </div>
+        </div>
+    </section>
+</body>

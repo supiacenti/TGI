@@ -1,0 +1,99 @@
+/* Estilo geral da página */
+body {
+    font-family: Arial, sans-serif;
+    /* ou a fonte de sua preferência */
+    background-color: #f4f4f4;
+    /* cor de fundo suave */
+    padding: 20px;
+    line-height: 1.6;
+}
+
+section {
+    margin-top: 2%;
+    margin-left: 5%;
+
+}
+
+h1 {
+    color: #333;
+}
+
+/* Estilização do ícone */
+.icon-image {
+    display: block;
+    width: 300px;
+    /* tamanho do ícone */
+    height: 300px;
+    border-radius: 50%;
+    /* torna a imagem redonda */
+    object-fit: cover;
+    /* garante que a imagem preencha o círculo */
+    margin: 0 auto 20px;
+    /* centraliza a imagem e adiciona espaço abaixo */
+    border: 3px solid #333;
+    /* borda da imagem */
+}
+
+/* Estilização do formulário e dos elementos de texto */
+form,
+.info {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    height: 130px;
+}
+
+label,
+p {
+    display: block;
+    margin-bottom: 10px;
+}
+
+select,
+input[type="submit"],
+.code {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.code {
+    width: auto;
+}
+
+input[type="submit"] {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #555;
+}
+
+/* Ajustes para pequenos detalhes e responsividade */
+@media (max-width: 600px) {
+    .icon-image {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+.pai {
+    display: flex;
+    /* Ativa o Flexbox */
+    justify-content: space-between;
+    /* Espaço igual entre as divs filhas */
+}
+
+.filho {
+    flex: 1;
+    /* As divs filhas ocuparão igual espaço no contêiner */
+    margin: 5px;
+    /* Espaçamento opcional entre as divs filhas */
+    /* Adicione outros estilos como padding, border, etc., conforme necessário */
+}

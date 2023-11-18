@@ -1,0 +1,142 @@
+.modal {
+    display: none;
+    /* Modal inicialmente oculto */
+    position: fixed;
+    /* Fica fixo na tela */
+    z-index: 1;
+    /* Fica no topo */
+    padding-top: 100px;
+    /* Posição do modal */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Largura total */
+    height: 100%;
+    /* Altura total */
+    overflow: auto;
+    /* Habilita a rolagem se necessário */
+    background-color: rgb(0, 0, 0);
+    /* Cor de fundo */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Cor de fundo com opacidade */
+}
+
+/* Conteúdo do modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* Botão de fechar */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.li {
+    text-align: center;
+}
+
+.showPass {
+    width: 32%;
+    height: 30px;
+    border-radius: 5px;
+    margin: auto;
+    background-color: #5DADE2;
+    border: none;
+    color: white;
+}
+
+.showPass:hover {
+    background-color: #2795de;
+}
+
+#icon1 {
+    cursor: pointer;
+}
+
+.expirationNow {
+    color: #e5535d;
+}
+
+.expirationNow:hover {
+    color: #be2f39;
+}
+
+.expirationOk {
+    color: #7fbb5c;
+}
+
+.expirationOk:hover {
+    color: #4a8525;
+}
+
+#updateModal p {
+    font-size: medium;
+    font-style: italic;
+}
+
+#updateModal input,
+#confirmModal input {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#titles i {
+    width: 5px;
+}
+
+#titles{
+    text-align: center;
+}
+
+#titles .username,
+#titles .site {
+    cursor: pointer;
+}
+
+li span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+#icon1, #icon2 {
+    font-size: 38px;
+    margin-left: 0;
+    text-align: center;
+    vertical-align: middle;
+    color: rgb(134, 134, 134);
+}
+
+
+#icon1 {
+    font-size: 40px;
+}
+
+
+#icon2 {
+    font-size: 37px;
+}
+
+.expirationNow, .expirationOk, .strong, .good, .weak{
+    font-weight: 900;
+}

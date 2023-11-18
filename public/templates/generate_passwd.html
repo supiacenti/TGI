@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Generate Password</title>
+    {% include 'icon.html' %}
+    <link rel="stylesheet" href="static/css/logout.css">
+    <link rel="stylesheet" href="static/css/general.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/generate_passwd.css">
+</head>
+
+<body>
+    {% include 'nav.html' %}
+    <section class="passwdArea">
+        <h2>Generate Password</h2>
+        <button class="generate" onclick="gerarSenha()">Generate</button>
+        <div class="senha-container">
+            <div id="senha"></div>
+            <button class="copie" onclick="copiarSenha()">Copy</button>
+        </div>
+    </section>
+
+    <script src="static/js/generate_passwd.js"></script>
+</body>

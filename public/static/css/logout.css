@@ -1,0 +1,56 @@
+.input, .button {
+    background-color: #5DADE2;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: 20px;
+    width: 70%;
+    height: 8%;
+    font-size: 25pt;
+}
+
+body{
+    display: flex; /* Usar flexbox para alinhar verticalmente */
+    justify-content: left; /* Alinhar horizontalmente */
+    align-items: center;
+
+}
+.containers{
+    width: 90%;
+    height: 80%;
+
+    box-sizing: border-box;
+    display: flex; /* Use flexbox para alinhar os divs lado a lado */
+    justify-content: space-between; /* Distribui os divs com espaço entre eles */
+    padding: 20px; /* Espaçamento interno da seção */
+}
+
+h2{
+    font-size: 72pt;
+    margin-bottom: -50px;
+}
+p{
+    font-size: 40pt;
+}
+
+.logoutB, .image{
+    flex: 1; /* Cada div ocupa uma parte igual do espaço disponível */
+    justify-content: center; /* Distribui os divs com espaço entre eles */
+}
+
+object{
+    height: 100%;
+}
+
+.logoutB{
+    display: flex; /* Usar flexbox para alinhar verticalmente */
+    justify-content: left; /* Alinhar horizontalmente */
+    align-items: center;
+    margin-left: 5%;
+}

@@ -1,0 +1,67 @@
+<nav class="main-menu">
+    <ul>
+        <li>
+            <img src="static/favicon.png" class="icon-menu" />
+
+        </li>
+        <li>
+            <a href="{{ url_for('home') }}">
+                <i class="fa fa-home fa-2x"></i>
+                <span class="nav-text">
+                    Home
+                </span>
+            </a>
+
+        </li>
+        <li class="has-subnav">
+            <a href="{{ url_for('add_password') }}">
+                <i class="fa fa-key fa-2x"></i>
+                <span class="nav-text">
+                    Add Password
+                </span>
+            </a>
+
+        </li>
+        <li class="has-subnav">
+            <a href="{{ url_for('generate_passwd') }}">
+                <i class="fa fa-plus fa-2x"></i>
+                <span class="nav-text">
+                    Generate Password
+                </span>
+            </a>
+
+        </li>
+
+        <li>
+            <a href="{{ url_for('about_us') }}">
+                <i class="fa fa-info fa-2x"></i>
+                <span class="nav-text">
+                    About Us
+                </span>
+            </a>
+        </li>
+    </ul>
+
+    <ul class="logout">
+        <li>
+            <a href="{{ url_for('logout') }}">
+                <i class="fa fa-power-off fa-2x"></i>
+                <span class="nav-text">
+                    Logout
+                </span>
+            </a>
+        </li>
+        <li class="profilee"></li>
+        <li>
+            <a href="{{ url_for('profile') }}">
+                {% if user and user.icon_choice %}
+                    <img src="{{ url_for('static', filename='img/' + user.icon_choice) }}" class="user-icon-menu" />
+                {% else %}
+                    <i class="fa fa-user fa-2x"></i>
+                {% endif %}
+                <span class="nav-text">Profile</span>
+            </a>
+        </li>
+        <li class="profilee"></li>
+    </ul>
+</nav>

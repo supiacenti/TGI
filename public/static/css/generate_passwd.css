@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    padding-top: 50px;
+}
+
+h2{
+    margin-bottom: 50px;
+}
+
+.passwdArea{
+    margin: auto;
+    text-align: center;
+    width: 1000px;
+    padding: 20px;
+}
+
+#senha {
+    font-size: 20px;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: white;
+    display: inline-block;
+    word-wrap: break-word;
+    margin-right: 10px;
+    flex-grow: 1;
+}
+
+.generate {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+.senha-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: 20px;
+}
+
+.copie{
+    background-color: #4c77af;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    width: 130px;
+}
+
+
+button:hover {
+    background-color: #45a049;
+}

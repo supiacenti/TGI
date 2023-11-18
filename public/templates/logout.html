@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Logout</title>
+    {% include 'icon.html' %}
+    <link rel="stylesheet" href="static/css/logout.css">
+    <link rel="stylesheet" href="static/css/general.css">
+    <link rel="stylesheet" href="static/css/style.css"></head>
+<body>
+    {% include 'nav.html' %}
+    <section class="containers">
+        <div class="logoutB">
+            <div class="boxL1">
+                <h2>Logout</h2>
+                <p>Are you sure you want to leave?</p>
+                <form method="POST" action="/logout_application">
+                    <input class="input" type="hidden" name="confirm_logout" value="yes">
+                    <input class="input" type="submit" value="Yes I'm sure">
+                </form>
+                <br>
+                <button class="button" onclick="cancelLogout()">No, I'm not sure</button>
+            </div>
+        </div>
+        <div class="image">
+            <div class="boxL2">
+                <img src="static/img/Thinking face-rafiki.svg">
+            </div>
+        </div>
+    </section>
+
+    <script src="static/js/logout.js"></script>
+</body>
+</html>
+

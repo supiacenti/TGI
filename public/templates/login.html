@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>OMNI</title>
+  {% include 'icon.html' %}
+  <link rel="stylesheet" href="static/css/login.css">
+</head>
+
+<body>
+  <section class="main-container">
+    <div class="image-container">
+      <!-- Coloque sua imagem aqui -->
+      <img src="static/img/OMNI.png" alt="Descrição da Imagem">
+    </div>
+    <div class="right">
+      <div class="wrapper">
+        <div class="form signup">
+          <header>Sign Up</header>
+          <form id="signupForm" action="/cadastrar_usuario" method="POST">
+            <input id="fulln" name="fulln" type="text" placeholder="Full name" required />
+            <input id="nick" name="nick" type="text" placeholder="Username" required />
+            <input id="email" name="email" type="text" placeholder="Email address" required />
+            <input id="passtohash" name="passtohash" type="password" placeholder="Password" required />
+            <div class="checkbox">
+              <input type="checkbox" id="signupCheck" required />
+              <label for="signupCheck">I accept all <a href="static/img/Terms and Conditions OMNI.pdf" target="_blank"
+                  rel="noopener noreferrer">terms & conditions</a></label>
+            </div>
+            <input type="submit" value="Signup" />
+          </form>
+        </div>
+        <div class="form login">
+          <header>Login</header>
+          <form method="POST" action="/autenticar">
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="submit" value="Login" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="static/js/login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+.box{
+    margin: auto;
+    width: 1500px;
+}
+.team-member {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.team-member img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid #333;
+}
+
+.team-member h2 {
+    margin-top: 10px;
+}
+
+.team-member a, p {
+    color: #333;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.team-member a:hover {
+    text-decoration: underline;
+}
