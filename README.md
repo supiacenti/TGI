@@ -68,6 +68,9 @@ Termina a sessão do usuário.
 ## /PROFILE
 Representação gráfica das informações do usuário
 Campo de validação da senha, bate com o código armazenado no banco de dados
+
+
+Necessário arquivos settings.py e firebase.json para rodar o programa.
 Seleção de ícones para a conta do usuário, ícones refletidos no menu em toda a sessão do usuário e em todo o site
 
 
